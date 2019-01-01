@@ -4,7 +4,7 @@ CREATE TABLE Users
 (UserId CHAR(23) NOT NULL,
 First VARCHAR(50),
 Last VARCHAR(100),
-Pic VARCHAR(100),
+PicId CHAR(23),
 PRIMARY KEY (UserId));
 
 CREATE TABLE Accounts
@@ -60,3 +60,29 @@ CreationDate DATE,
 Link VARCHAR(1024),
 PRIMARY KEY (ProjectId));
 
+CREATE TABLE Categories
+(CategoryId CHAR(23) NOT NULL,
+CategoryName VARCHAR(256) NOT NULL,
+Active BOOLEAN,
+PRIMARY KEY (CategoryId));
+
+CREATE TABLE Topic
+(TopicId CHAR(23) NOT NULL,
+TopicTitle VARCHAR(256) NOT NULL,
+TopicSubtitle VARCHAR(256),
+UserId CHAR(23),
+CreatedOn DATE,
+Active BOOLEAN,
+CategoryId CHAR(23),
+PRIMARY KEY (TopicId),
+FOREIGN KEY (CategoryId) REFERENCES Categories(CategoryId));
+
+CREATE TABLE Posts
+(PostId CHAR(23) NOT NULL,
+PostContent VARCHAR(2048) NOT NULL,
+UserId CHAR(23),
+PostDate DATE,
+TopicId CHAR(23),
+PRIMARY KEY (PostId),
+FOREIGN KEY (UserId) REFERENCES Users(UserId),
+FOREIGN KEY (TopicId) REFERENCES Topic(TopicId));

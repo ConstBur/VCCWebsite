@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Index Page</title>
@@ -6,7 +6,36 @@
     <script src="Development/Frontend/JS/script.js"></script>
 </head>
 <body onload="onBoot();">
-    <h1>This is the index page.</h1>
-    <h4>Created solely for testing purposes.</h4>
+    <!--Menu-->
+    <nav>
+        <div id="logo">
+            <img src="Development/Frontend/Pictures/logo.png"/>
+        </div>
+        <div id="navbar">
+            <ul id="menu">
+                <li><a>Home</a></li>
+                <li><a>About Us</a></li>
+                <li><a>News Feed</a></li>
+                <li><a>Forum</a></li>
+                <li><a>Projects</a></li>
+                <li><a>Creators?</a></li>
+                <li><a href="Development/Frontend/HTML/login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--First screen-->
+    <div id="firstScreen">
+        <img src="Development/Frontend/Pictures/logo.png"/>
+        <h3 id="mission">Mission Statement</h3>
+    </div>
+    <!--Club description-->
+    <div id="descClub">
+        <p>This is the club description.</p>
+    </div>
+    <!--Member description-->
+    <div id="descMembers">
+        <img class="member" num="1" src="Development/Frontend/Pictures/Members/1/avatar.png"/>
+        <img class="member" num="2" src="Development/Frontend/Pictures/Members/2/avatar.png"/>
+    </div>
 </body>
 </html>

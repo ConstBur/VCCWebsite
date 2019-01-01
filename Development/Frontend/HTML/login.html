@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link href="../CSS/login.css" type="text/css" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="../JS/login.js"></script>
+    </head>
+    <body>
+        <h2>Login form</h2>
+        <form id="regForm" action="../../Backend/PHP/registration.php">
+            <div class="container">
+                <h1>Register</h1>
+                <p id="message">Please fill in this form to create an account.</p>
+                <hr>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter e-mail" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter password" name="psw" required>
+
+                <label for="repeat"><b>Password</b></label>
+                <input type="password" placeholder="Repeat password" name="repeat" required>
+                <hr>
+
+                <p>By creating an account you agree to our <a href="#">Terms & Conditions.</a></p>
+                <button type="submit" class="registration">Register</button>
+            </div>
+
+            <div class="container signin">
+                <p>Already have an account? <a href="#">Sign in</a>.</p>
+            </div>
+        </form>
+        <span id="result"></span>
+    </body>
+</html>
