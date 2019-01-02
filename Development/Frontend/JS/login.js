@@ -22,6 +22,7 @@ function validateUsername(){
 	/*************** Verify the Username ************/
 	/*Minimum 6 chars, only alphanumeric*/
 	var username = $("input[name='username']").val();
+	console.log(username);
 	if(username.length < 6 || !isAlpha(username.charAt(0)) || !isAlphaNumeric(username))
 	{
 		return "Username must be alphanumeric, begin with a letter, and be at least 6 characters long.\n"; 

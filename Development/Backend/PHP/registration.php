@@ -2,6 +2,7 @@
     $id = uniqid("", true);
     $user = "";
     $psw = "";
+    include_once('phpconnect.php');
     function sendData() {
         global $id, $user, $psw;
         $id = uniqid("", true);
@@ -14,6 +15,5 @@
             echo "Registration successful!";
         else
             echo "Registration failed"; }
-    include_once('phpconnect.php');
     sendData();
 ?>
