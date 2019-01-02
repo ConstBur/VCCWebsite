@@ -5,7 +5,7 @@ $(document).ready(function() {
         else
         {
             $("#result").html("Registering user...");
-            var data = $("#regForm :input").serializeArray();
+            var data = $("#regForm input").serializeArray();
             $.post($("#regForm").attr("action"), data, function(info) {
                 $("#result").html(info);
             });
@@ -14,40 +14,22 @@ $(document).ready(function() {
 });
 
 function checkValidate() {
-    var message = validateEmail() + validatePassword();
+    var message = validateUsername() + validatePassword();
     return message;
 }
 
-function validateEmail(){
-	/*************** Verify the Email ************/
-    var email = $("input[name='email']").val();
-    var message = "";
-	if(email.indexOf("@") == -1)
+function validateUsername(){
+	/*************** Verify the Username ************/
+	/*Minimum 6 chars, only alphanumeric*/
+	var username = $("input[name='username']").val();
+	if(username.length < 6 || !isAlpha(username.charAt(0)) || !isAlphaNumeric(username))
 	{
-		message += "Email doesn't have a @\n";
+		return "Username must be alphanumeric, begin with a letter, and be at least 6 characters long.\n"; 
 	}
-	var username = email.substring(0, email.indexOf("@"));
-	if(!isAlphaNumeric(username)) 
+	else
 	{
-		message += "Email isn't alphanumeric.\n";
+		return "";
 	}
-
-	var domain = email.substring(email.indexOf("@") + 1);
-	if(domain.indexOf(".") == -1)
-	{
-		message += "Email has no domain name.\n";
-	}
-	var domainName = domain.substring(0, domain.indexOf("."));
-	if(!isAlphaNumeric(domainName))
-	{
-		message += "Domain name isn't alphanumeric.\n";
-	}
-	var extension = domain.substring(domain.indexOf(".") + 1);
-	if(!isAlpha(extension))
-	{
-		message += "Extension is not alphabetical.\n";
-    }
-    return message;
 }
 
 function validatePassword(){
@@ -73,7 +55,7 @@ function validatePassword(){
 
 function isAlpha(value)
 {
-	var validChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm-";
+	var validChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm_";
 	for(var i = 0; i < value.length; i++)
 	{
 		if(validChars.indexOf(value.charAt(i)) == -1)
@@ -99,7 +81,7 @@ function checkNumeric(value)
 
 function isAlphaNumeric(value)
 {
-	var validChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890";
+	var validChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890_";
 	for(var i = 0; i < value.length; i++)
 	{
 		if(validChars.indexOf(value.charAt(i)) == -1)
