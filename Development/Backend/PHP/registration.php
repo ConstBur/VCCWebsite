@@ -5,8 +5,8 @@
     function sendData() {
         global $id, $user, $psw;
         $id = uniqid("", true);
-        if(isset($_POST['user']))
-            $user = $_POST['user'];
+        if(isset($_POST['username']))
+            $user = $_POST['username'];
         if(isset($_POST['psw']))
             $psw = hash('sha256', $_POST['psw']);
         if($user != "" && $psw != "" && 
