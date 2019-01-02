@@ -5,7 +5,7 @@ $(document).ready(function() {
         else
         {
             $("#result").html("Registering user...");
-            var data = $("#regForm input").serializeArray();
+            var data = $("#regForm :input").serializeArray();
             $.post($("#regForm").attr("action"), data, function(info) {
                 $("#result").html(info);
             });
