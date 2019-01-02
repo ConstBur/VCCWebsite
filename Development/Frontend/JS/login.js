@@ -5,10 +5,11 @@ $(document).ready(function() {
         else
         {
             $("#result").html("Registering user...");
-            var data = $("#regForm :input").serializeArray();
-            $.post($("#regForm").attr("action"), data, function(info) {
+			var data = $("#regForm :input").serializeArray();
+			console.log(data);
+            /*$.post($("#regForm").attr("action"), data, function(info) {
                 $("#result").html(info);
-            });
+            });*/
         }
     });
 });
