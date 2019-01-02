@@ -5,11 +5,11 @@ $(document).ready(function() {
         else
         {
             $("#result").html("Registering user...");
-			var data = $("#regForm :input").serializeArray();
+			var data = $("#regForm").serializeArray();
 			console.log(data);
-            /*$.post($("#regForm").attr("action"), data, function(info) {
+            $.post($("#regForm").attr("action"), data, function(info) {
                 $("#result").html(info);
-            });*/
+            });
         }
     });
 });
@@ -23,7 +23,6 @@ function validateUsername(){
 	/*************** Verify the Username ************/
 	/*Minimum 6 chars, only alphanumeric*/
 	var username = $("input[name='username']").val();
-	console.log(username);
 	if(username.length < 6 || !isAlpha(username.charAt(0)) || !isAlphaNumeric(username))
 	{
 		return "Username must be alphanumeric, begin with a letter, and be at least 6 characters long.\n"; 
@@ -43,8 +42,7 @@ function validatePassword(){
 	{
 		message += "Password must have at least 8 characters.\n";
 	}
-	if(!checkCapital(password) || !checkNumeric(password)
-		|| !checkLowerCase(password)|| !isAlphaNumeric(password))
+	if(!checkCapital(password) || !isAlphaNumeric(password))
 	{
 		message += "Password must have a capital letter and be alphanumeric.\n";
 	}
@@ -57,7 +55,7 @@ function validatePassword(){
 
 function isAlpha(value)
 {
-	var validChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm_";
+	var validChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
 	for(var i = 0; i < value.length; i++)
 	{
 		if(validChars.indexOf(value.charAt(i)) == -1)
