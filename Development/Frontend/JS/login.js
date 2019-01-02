@@ -7,6 +7,7 @@ $(document).ready(function() {
             $("#result").html("Registering user...");
 			var data = $("#regForm").serializeArray();
 			console.log(data);
+			$("#regForm").attr("action", "../../Backend/PHP/registration.php");
             $.post($("#regForm").attr("action"), data, function(info) {
                 $("#result").html(info);
             });
