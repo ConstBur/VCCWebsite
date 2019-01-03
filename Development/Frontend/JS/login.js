@@ -8,7 +8,7 @@ $(document).ready(function() {
         });
 	});
 	
-	$("#regForm").submit(function() {
+	$("#loginForm").submit(function() {
 		return false;
 	});
 });
