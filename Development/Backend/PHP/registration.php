@@ -4,7 +4,7 @@
     $psw = "";
     include_once('phpconnect.php');
     function sendData() {
-        global $id, $user, $psw;
+        global $id, $user, $psw, $conn;
         $id = uniqid("", true);
         if(isset($_POST['username']))
         {
