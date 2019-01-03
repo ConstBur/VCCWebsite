@@ -11,7 +11,11 @@ $(document).ready(function() {
                 $("#result").html(info);
             });
         }
-    });
+	});
+	
+	$("#regForm").submit(function() {
+		return false;
+	});
 });
 
 function checkValidate() {
