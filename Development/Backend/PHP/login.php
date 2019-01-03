@@ -8,7 +8,7 @@
             $user = $_POST['username'];
         if(isset($_POST['psw']))
             $psw = hash('sha256', $_POST['psw']);
-        if(mysqli_query($conn, "SELECT AccountId FROM Accounts WHERE UserName = '$name';"))
+        if(mysqli_query($conn, "SELECT AccountId FROM Accounts WHERE UserName = '$user';"))
         {
             if(mysqli_query($conn, "SELECT AccountId FROM Accounts WHERE PasswordHash = '$psw'"))
                 echo "Login Successful!";
