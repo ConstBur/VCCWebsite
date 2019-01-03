@@ -6,10 +6,10 @@
         <script src="../JS/register.js"></script>
     </head>
     <body>
-        <form id="regForm" action="../../Backend/PHP/registration.php">
+        <form id="loginForm" action="../../Backend/PHP/login.php">
             <div class="container">
-                <h1>Register</h1>
-                <p id="message">Please fill in this form to create an account.</p>
+                <h1>Login</h1>
+                <p id="message">Log into your account.</p>
                 <hr>
 
                 <label for="username"><b>Username:</b></label>
@@ -18,16 +18,9 @@
                 <label for="psw"><b>Password:</b></label>
                 <input type="password" placeholder="Enter password" name="psw" required>
 
-                <label for="repeat"><b>Repeat password:</b></label>
-                <input type="password" placeholder="Repeat password" name="repeat" required>
                 <hr>
 
-                <p>By creating an account you agree to our <a href="#">Terms & Conditions.</a></p>
-                <button type="submit" class="registration">Register</button>
-            </div>
-
-            <div class="container signin">
-                <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+                <button type="submit" class="registration">Sign In</button>
             </div>
         </form>
         <span id="result"></span>
