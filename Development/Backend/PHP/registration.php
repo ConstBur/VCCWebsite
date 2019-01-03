@@ -10,7 +10,7 @@
             $user = $_POST['username'];
         if(isset($_POST['psw']))
             $psw = hash('sha256', $_POST['psw']);
-        if(mysqli_query($conn, "INSERT INTO Users (AccountId, UserName, PasswordHash) VALUES('$id', '$user', '$psw')"))
+        if(mysqli_query($conn, "INSERT INTO Accounts (AccountId, UserName, PasswordHash) VALUES('$id', '$user', '$psw')"))
             echo "Registration successful!";
         else
             echo "Registration failed"; }
