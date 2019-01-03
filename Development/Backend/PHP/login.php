@@ -3,6 +3,7 @@
     $psw = "";
     include_once('phpconnect.php');
     function checkUser() {
+        global $user, $psw, $conn;
         if(isset($_POST['username']))
             $user = $_POST['username'];
         if(isset($_POST['psw']))
