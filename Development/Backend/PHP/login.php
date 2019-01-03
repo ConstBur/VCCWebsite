@@ -17,4 +17,5 @@
         else
             echo "User not found!";
     }
+    checkUser();
 ?>
