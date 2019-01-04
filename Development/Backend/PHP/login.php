@@ -11,7 +11,7 @@
             $psw = hash('sha256', $_POST['psw']);
         $query = mysqli_query($conn, "SELECT PasswordHash FROM Accounts WHERE UserName = '$user';");
         $count = mysqli_num_rows($query);
-        if(count == "0")
+        if($count == "0")
             echo "User not found!";
         else if(mysqli_fetch_array($query)[0] != $psw)
             echo "Wrong password!";
