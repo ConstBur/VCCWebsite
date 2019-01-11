@@ -1,32 +1,106 @@
-#menu {
-    list-style: none;
-    font-weight: bold;
-    float: left; /* Clear floats */
+body
+{
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: url("../Pictures/Index Page/pc_room.JPG");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+nav
+{
+    margin: 0;
     width: 100%;
-    margin-top: -20px;
-    background-color: #333;
-    /* Bring the nav above everything else--uncomment if needed.
-    position: relative;
-    z-index: 5;
-    */
+    height: 38px;
+    background-color: #ed2e31;
+    position: fixed;
 }
-
-#menu li {
+img#logo
+{
+    width: 130px;
+    height: 38px;
+    margin: 0;
+    background-color: #ed2e31;
     float: left;
-    margin-right: 10px;
-    position: relative;
 }
-
-#menu a {
-    display: block;
-    padding: 5px;
-    color: #fff;
-    background-color: #333;
-    text-decoration: none;
+ul#menu
+{
+    margin:0;
+    padding:0;
 }
-
-#menu a:hover {
-    color: #fff;
-    background-color: #6b0c36;
+ul#menu .active
+{
+    background-color: #000000;
+    color: #ffffff;
     text-decoration: underline;
+}
+ul#menu .selected
+{
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: underline;
+}
+ul#menu > li
+{
+    list-style:none;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+}
+ul#menu a
+{
+    text-decoration:none;
+    color:#fff;
+    background-color:#ed2e31;
+    display:block;
+    padding:10px;
+}
+ul#menu > li ul.dropdown
+{
+    margin:0;
+    padding:0;
+    width:150px;
+    position:absolute;
+    display:none;
+}
+ul#menu > li ul.dropdown ul
+{
+    margin:0;
+    padding:0;
+    width:150px;
+    position:absolute;
+    display:none;
+    left:150px;
+    top:0;
+}
+ul#menu > li ul li
+{
+    margin:0;
+    padding:0;
+    list-style:none;
+    position:relative;
+}
+#firstScreen
+{
+    padding-top: 38px;
+    width: 100%;
+    height: 1042px;
+    margin: 0;
+    background-color: rgba(237, 46, 49, 0.4);
+}
+#FSInfo
+{
+    padding-top: 38px;
+    text-align: center;
+    background-color: rgba();
+    width: 80%;
+    height: 1005px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255,255,255,0.6);
+}
+#descClub
+{
+    
 }

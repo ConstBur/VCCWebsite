@@ -3,39 +3,54 @@
 <head>
     <title>Index Page</title>
     <link href="Development/Frontend/CSS/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" charset="UTF-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="Development/Frontend/JS/script.js"></script>
 </head>
 <body onload="onBoot();">
     <!--Menu-->
     <nav>
-        <div id="logo">
-            <img src="Development/Frontend/Pictures/logo.png"/>
-        </div>
-        <div id="navbar">
-            <ul id="menu">
-                <li><a>Home</a></li>
-                <li><a>About Us</a></li>
-                <li><a>News Feed</a></li>
-                <li><a>Forum</a></li>
-                <li><a>Projects</a></li>
-                <li><a>Creators?</a></li>
-                <li><a href="Development/Frontend/HTML/register.html">Login</a></li>
+        <img id="logo" src="Development/Frontend/Pictures/logo.png"/>
+        <ul id="menu">
+          <li><a href="index.html" class="selected">Home</a></li>
+          <li><a href="/Development/Frontend/HTML/about.html">About</a></li>
+          <li><a href="/Development/Frontend/HTML/newsfeed.html">News Feed</a></li>
+          <li><a href="/Development/Frontend/HTML/forum.html">Forum</a></li>
+          <li>
+            <a href="#projects">Projects</a>
+            <ul class="dropdown">
+              <li><a href="/Development/Frontend/HTML/Projects/2018.html">2018</a>
+                <ul class="dropdown">
+                    <li><a href="/Development/Frontend/HTML/Projects/2018/website.html">Club Website</a></li>
+                </ul>
+              </li>
+              <li><a href="/Development/Frontend/HTML/Projects/2019.html">2019</a>
+                <ul class="dropdown">
+                    <li><a href="/Development/Frontend/HTML/Projects/2019/ai.html">AI</a></li>
+                </ul>
+              </li>
             </ul>
-        </div>
+          </li>
+          <li><a href="/Development/Frontend/HTML/creators.html">Creators</a></li>
+          <li><a href="/Development/Frontend/HTML/contact.html">Contact</a></li>
+        </ul>
     </nav>
     <!--First screen-->
     <div id="firstScreen">
-        <img src="Development/Frontend/Pictures/logo.png"/>
-        <h3 id="mission">Mission Statement</h3>
-    </div>
-    <!--Club description-->
-    <div id="descClub">
-        <p>This is the club description.</p>
-    </div>
-    <!--Member description-->
-    <div id="descMembers">
-        <img class="member" num="1" src="Development/Frontend/Pictures/Members/1/avatar.png"/>
-        <img class="member" num="2" src="Development/Frontend/Pictures/Members/2/avatar.png"/>
+        <div id="FSInfo">
+            <img src="Development/Frontend/Pictures/logo.png"/>
+            <h1 id="mission">Mission Statement</h1>
+            <h3>Learn to code and apply your knowledge by creating and implementing real projects!</h3>
+            <!--Club description-->
+            <div id="descClub">
+                <h1>Club Description</h1>
+                <p>This is the club description.</p>
+            </div>
+            <!--Member description-->
+            <div id="descMembers">
+                <img class="member" num="1" src="Development/Frontend/Pictures/Members/1/avatar.png"/>
+                <img class="member" num="2" src="Development/Frontend/Pictures/Members/2/avatar.png"/>
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -2,35 +2,29 @@ USE id8288583_vcc_website;
 
 CREATE TABLE Users
 (UserId CHAR(23) NOT NULL,
-First VARCHAR(50),
-Last VARCHAR(100),
-PicId CHAR(23),
-PRIMARY KEY (UserId));
-
-CREATE TABLE Accounts
-(AccountId CHAR(23) NOT NULL,
 UserName VARCHAR(64) NOT NULL,
-PasswordHash VARCHAR(64) NOT NULL, 
-UserId CHAR(23),
-PRIMARY KEY (AccountId),
-FOREIGN KEY (UserId) REFERENCES Users(UserId));
+PasswordHash VARCHAR(64) NOT NULL,
+CreatedOn DATE,
+PRIMARY KEY (UserId));
 
 CREATE TABLE UserPictures
 (PicId CHAR(23) NOT NULL,
 PicMime VARCHAR(255) NOT NULL,
 PicBlob BLOB NOT NULL,
-UserId CHAR(23),
-PRIMARY KEY (PicId),
-FOREIGN KEY (UserId) REFERENCES Users(UserId));
+PRIMARY KEY (PicId));
 
-CREATE TABLE AccountInfo
-(AccountId CHAR(23) NOT NULL,
+CREATE TABLE UserInfo
+(UserId CHAR(23) NOT NULL,
 LastLogin DATE,
 Email VARCHAR(64),
 ChatName VARCHAR(32),
 Phone VARCHAR(15),
-PRIMARY KEY (AccountId),
-FOREIGN KEY (AccountId) REFERENCES Accounts(AccountId));
+First VARCHAR(50),
+Last VARCHAR(100),
+PicId CHAR(23),
+PRIMARY KEY (UserId),
+FOREIGN KEY (UserId) REFERENCES Users(UserId),
+FOREIGN KEY (PicId) REFERENCES UserPictures(PicId));
 
 CREATE TABLE Events
 (EventId CHAR(23) NOT NULL,
@@ -41,7 +35,7 @@ EventHostId CHAR(23),
 EventDuration VARCHAR(20),
 EventDescription VARCHAR(2048),
 PRIMARY KEY (EventId),
-FOREIGN KEY (EventHostId) REFERENCES Accounts(AccountId));
+FOREIGN KEY (EventHostId) REFERENCES Users(UserId));
 
 CREATE TABLE NewsFeed
 (NewsId CHAR(23) NOT NULL,
@@ -50,7 +44,7 @@ PosterId CHAR(23) NOT NULL,
 NewsDate DATE NOT NULL,
 NewsTitle VARCHAR(128),
 PRIMARY KEY (NewsId),
-FOREIGN KEY (PosterId) REFERENCES Accounts(AccountId));
+FOREIGN KEY (PosterId) REFERENCES Users(UserId));
 
 CREATE TABLE Projects
 (ProjectId CHAR(23) NOT NULL,
