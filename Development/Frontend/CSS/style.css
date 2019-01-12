@@ -13,6 +13,7 @@ nav
     height: 38px;
     background-color: #ed2e31;
     position: fixed;
+    min-width: 750px;
 }
 img#logo
 {
@@ -86,7 +87,7 @@ ul#menu > li ul li
     width: 100%;
     height: 1042px;
     margin: 0;
-    background-color: rgba(237, 46, 49, 0.4);
+    background-color: rgba(237, 46, 49, 0.6);
 }
 #FSInfo
 {
@@ -98,9 +99,25 @@ ul#menu > li ul li
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(255,255,255,0.6);
+    background-color: rgba(255,255,255,0.8);
 }
 #descClub
 {
-    
+
+}
+#descMembers, #descMembers div
+{
+    width: 100%;
+}
+#descMembers div
+{
+    text-align: left;
+    float: left;
+    clear: left;
+}
+#descMembers div:nth-of-type(2n)
+{
+    text-align: right;
+    float: right;
+    clear: right;
 }
